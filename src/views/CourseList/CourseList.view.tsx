@@ -1,6 +1,5 @@
-import React, { useContext, useEffect, useMemo, useRef, useState } from "react";
+import React, { useContext, useEffect, useMemo, useState } from "react";
 import { Pagination } from "@mui/material";
-import scrollIntoView from "scroll-into-view-if-needed";
 import { usePreviewCourses } from "../../hooks/usePreviewCourses.hook";
 import { AlertContext } from "../../providers/AlertProvider/AlertProvider.provider";
 import MasonryCoursesLayout from "./components/MasonryCoursesLayout/MasonryCoursesLayout.component";
@@ -11,7 +10,6 @@ import { getCoursesForPage } from "./utils";
 const CourseList = () => {
   const { courses, isLoading, isError } = usePreviewCourses();
   const { showAlert } = useContext(AlertContext);
-  const paginationRef = useRef<HTMLDivElement>(null);
   const [page, setPage] = useState(1);
 
   const pageCount = Math.ceil(courses.length / courserPerPage);
@@ -40,14 +38,7 @@ const CourseList = () => {
   }, []);
 
   useEffect(() => {
-    if (!paginationRef.current) {
-      return;
-    }
-    scrollIntoView(paginationRef.current, {
-      scrollMode: "if-needed",
-      block: "nearest",
-      inline: "nearest",
-    });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }, [page]);
 
   useEffect(() => {
@@ -59,7 +50,7 @@ const CourseList = () => {
   return (
     <CourseListPage>
       <MasonryCoursesLayout courses={selectedCourses} isLoading={isLoading || isError} />
-      <PaginationBlock ref={paginationRef} visible={!(isError || isLoading)}>
+      <PaginationBlock visible={!(isError || isLoading)}>
         <Pagination count={pageCount} size="large" page={page} onChange={handleChangePage} />
       </PaginationBlock>
     </CourseListPage>
