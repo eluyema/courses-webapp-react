@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/courses-webapp-react/static/js/main.796f01b6.js",
+    "main.js": "/courses-webapp-react/static/js/main.edbea634.js",
     "index.html": "/courses-webapp-react/index.html",
-    "main.796f01b6.js.map": "/courses-webapp-react/static/js/main.796f01b6.js.map"
+    "main.edbea634.js.map": "/courses-webapp-react/static/js/main.edbea634.js.map"
   },
   "entrypoints": [
-    "static/js/main.796f01b6.js"
+    "static/js/main.edbea634.js"
   ]
 }
