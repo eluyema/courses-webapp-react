@@ -1,18 +1,18 @@
 import { Rating, Typography } from "@mui/material";
 import React, { FC } from "react";
 import { CourseMeta, PreviewCourse } from "../../../../common/types/courses";
+import EclipsTitle from "../../../../ui/EcliseTitle/EcliseTitle.ui";
+import { NormalizedLink } from "../../../../ui/NormalizedLink/NormalizedLink.ui";
 import {
   CardBody,
   CardImage,
   CardImageSection,
   CardRatingGrade,
   CardRatingSection,
-  EclipsTitle,
   CardTitleSection,
   CourseCardWrapper,
   CardLessonsSection,
   CardSkillsSection,
-  CourseLink,
 } from "./CourseCard.styles";
 
 interface CourseCard {
@@ -35,7 +35,7 @@ const CourseCard: FC<CourseCard> = ({ course }) => {
   const skills = getSkills(course.meta);
 
   return (
-    <CourseLink to={"/course/" + course.id} title={course.title}>
+    <NormalizedLink to={"/course/" + course.id} title={course.title}>
       <CourseCardWrapper elevation={5}>
         <CardImageSection>
           <CardImage src={course.previewImageLink + "/cover.webp"} />
@@ -61,7 +61,7 @@ const CourseCard: FC<CourseCard> = ({ course }) => {
           )}
         </CardBody>
       </CourseCardWrapper>
-    </CourseLink>
+    </NormalizedLink>
   );
 };
 

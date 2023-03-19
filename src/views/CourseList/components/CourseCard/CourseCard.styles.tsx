@@ -1,5 +1,4 @@
 import { Paper, styled, Typography } from "@mui/material";
-import { Link } from "react-router-dom";
 
 const CourseCardWrapper = styled(Paper)({
   height: "100%",
@@ -30,19 +29,6 @@ const CardTitleSection = styled("div")(({ theme }) => ({
   marginTop: theme.spacing(0.35),
 }));
 
-const EclipsTitle = styled(Typography)`
-  display: -moz-box;
-  display: -webkit-box;
-  display: box;
-  -webkit-box-orient: vertical;
-  -moz-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  -webkit-line-clamp: 2;
-  -moz-line-clamp: 2;
-  line-clamp: 2;
-`;
-
 const CardRatingSection = styled("div")({
   display: "flex",
   alignItems: "center",
@@ -60,20 +46,14 @@ const CardSkillsSection = styled("div")(({ theme }) => ({
 
 const CardLessonsSection = styled("div")({});
 
-const CourseLink = styled(Link)({
-  textDecoration: "none",
-});
-
 export {
   CourseCardWrapper,
   CardImageSection,
   CardImage,
   CardBody,
-  EclipsTitle,
   CardTitleSection,
   CardRatingSection,
   CardRatingGrade,
   CardLessonsSection,
   CardSkillsSection,
-  CourseLink,
 };

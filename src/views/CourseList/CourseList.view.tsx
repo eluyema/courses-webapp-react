@@ -1,5 +1,6 @@
-import React, { useContext, useEffect, useMemo, useState } from "react";
+import React, { useContext, useEffect, useMemo, useRef, useState } from "react";
 import { Pagination } from "@mui/material";
+import scrollIntoView from "scroll-into-view-if-needed";
 import { usePreviewCourses } from "../../hooks/usePreviewCourses.hook";
 import { AlertContext } from "../../providers/AlertProvider/AlertProvider.provider";
 import MasonryCoursesLayout from "./components/MasonryCoursesLayout/MasonryCoursesLayout.component";
@@ -10,7 +11,7 @@ import { getCoursesForPage } from "./utils";
 const CourseList = () => {
   const { courses, isLoading, isError } = usePreviewCourses();
   const { showAlert } = useContext(AlertContext);
-
+  const paginationRef = useRef<HTMLDivElement>(null);
   const [page, setPage] = useState(1);
 
   const pageCount = Math.ceil(courses.length / courserPerPage);
@@ -39,7 +40,14 @@ const CourseList = () => {
   }, []);
 
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    if (!paginationRef.current) {
+      return;
+    }
+    scrollIntoView(paginationRef.current, {
+      scrollMode: "if-needed",
+      block: "nearest",
+      inline: "nearest",
+    });
   }, [page]);
 
   useEffect(() => {
@@ -48,27 +56,10 @@ const CourseList = () => {
     }
   }, [isError]);
 
-  useEffect(() => {
-    const s = new Set();
-    if (courses && courses.length) {
-      courses.forEach((course) => {
-        course.tags.forEach((i) => {
-          s.add(i);
-        });
-      });
-      let str = "";
-      Array.from(s).forEach((element) => {
-        console.log(element);
-        str += element + ", ";
-      });
-      console.log(str);
-    }
-  }, [courses]);
-
   return (
     <CourseListPage>
       <MasonryCoursesLayout courses={selectedCourses} isLoading={isLoading || isError} />
-      <PaginationBlock visible={!(isError || isLoading)}>
+      <PaginationBlock ref={paginationRef} visible={!(isError || isLoading)}>
         <Pagination count={pageCount} size="large" page={page} onChange={handleChangePage} />
       </PaginationBlock>
     </CourseListPage>

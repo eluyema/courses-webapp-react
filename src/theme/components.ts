@@ -1,6 +1,6 @@
 import { Components } from "@mui/material";
 
-const components: Components = {
+const componentsOption: Components = {
   MuiCssBaseline: {
     styleOverrides: () => `
         body {
@@ -10,4 +10,4 @@ const components: Components = {
   },
 };
 
-export { components };
+export { componentsOption };

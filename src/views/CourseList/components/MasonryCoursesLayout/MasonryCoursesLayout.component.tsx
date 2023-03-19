@@ -11,7 +11,6 @@ interface MasonryCoursesLayoutProps {
 
 const MasonryCoursesLayout: FC<MasonryCoursesLayoutProps> = ({ courses, isLoading }) => {
   const { first, second, third } = disributeCourses(courses);
-  console.log({ first, second, third });
 
   return (
     <MasonryCoursesContainer>

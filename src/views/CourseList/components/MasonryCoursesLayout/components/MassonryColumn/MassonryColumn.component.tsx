@@ -3,6 +3,7 @@ import { PreviewCourse } from "../../../../../../common/types/courses";
 import CourseCard from "../../../CourseCard/CourseCard.component";
 import { CoursesColumn, MassonryCourseCard } from "./MassonryColumn.styles";
 import SkeletonCard from "./SkeletonCard/SkeletonCard.component";
+import shortid from "shortid";
 
 interface MassonryColumnProps {
   courses: PreviewCourse[];
@@ -21,7 +22,7 @@ const MassonryColumn: FC<MassonryColumnProps> = ({
     const skeletons = [];
     for (let i = 0; i < num; i++) {
       skeletons.push(
-        <MassonryCourseCard type={type}>
+        <MassonryCourseCard type={type} key={shortid.generate()}>
           <SkeletonCard />
         </MassonryCourseCard>
       );
