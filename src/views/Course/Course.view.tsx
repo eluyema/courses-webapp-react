@@ -21,6 +21,7 @@ const Course = () => {
 
   useEffect(() => {
     window.document.title = "Course";
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
 
   useEffect(() => {
