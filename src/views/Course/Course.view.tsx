@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom";
 
 const Course = () => {
   const { courseId } = useParams();
-  const { course, isLoading, isError } = usePreviewCourseById(courseId as string);
+  const { course, isError } = usePreviewCourseById(courseId as string);
 
   const { showAlert } = useContext(AlertContext);
 

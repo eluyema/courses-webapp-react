@@ -1,6 +1,5 @@
 import { Rating, Typography } from "@mui/material";
 import React, { FC } from "react";
-import { Link } from "react-router-dom";
 import { CourseMeta, PreviewCourse } from "../../../../common/types/courses";
 import {
   CardBody,

@@ -1,5 +1,5 @@
 import { AxiosError } from "axios";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import useSWR from "swr";
 import { PreviewCourseEndpoints } from "../common/constants/endpoints/previewCourse.endpoints";
 import { oneSecond } from "../common/constants/swr/swr.contants";

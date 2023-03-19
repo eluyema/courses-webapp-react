@@ -2,6 +2,7 @@
   "name": "test-case-react",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://eluyema.github.io/courses-webapp-react/",
   "dependencies": {
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
@@ -24,7 +25,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "NODE_ENV=production react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "format:check": "prettier --check --ignore-path .gitignore .",

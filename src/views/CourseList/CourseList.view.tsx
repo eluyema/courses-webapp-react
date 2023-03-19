@@ -1,5 +1,5 @@
-import React, { memo, useContext, useEffect, useMemo, useState } from "react";
-import { Button, Pagination, Typography } from "@mui/material";
+import React, { useContext, useEffect, useMemo, useState } from "react";
+import { Pagination } from "@mui/material";
 import { usePreviewCourses } from "../../hooks/usePreviewCourses.hook";
 import { AlertContext } from "../../providers/AlertProvider/AlertProvider.provider";
 import MasonryCoursesLayout from "./components/MasonryCoursesLayout/MasonryCoursesLayout.component";

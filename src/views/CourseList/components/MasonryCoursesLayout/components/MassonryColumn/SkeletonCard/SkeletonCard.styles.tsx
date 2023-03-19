@@ -19,7 +19,7 @@ const SkeletonImage = styled(Skeleton)(({ theme }) => ({
   borderTopRightRadius: theme.shape.borderRadius,
 }));
 
-const SkeletonTitle = styled(Skeleton)(({ theme }) => ({
+const SkeletonTitle = styled(Skeleton)(() => ({
   width: "85%",
   height: "2rem",
 }));
@@ -36,7 +36,7 @@ const SkeletonGrade = styled(Skeleton)(({ theme }) => ({
   marginTop: theme.spacing(0.1),
 }));
 
-const SkeletonSkillRow = styled(Skeleton)(({ theme }) => ({
+const SkeletonSkillRow = styled(Skeleton)(() => ({
   width: "90%",
   height: "1.2rem",
 }));

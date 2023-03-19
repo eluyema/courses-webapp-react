@@ -9,7 +9,8 @@ jobs:
     steps:
       - name: Set environment variables
         run: |
-          echo "REACT_APP_API_URL=${{ secrets.API_URL }}" >> $GITHUB_ENV
+          echo "REACT_APP_API_URL=${{ secrets.API_URL }}" >> $GITHUB_ENV &&
+          echo "REACT_APP_PRODUCTION_BASENAME=${{ secrets.PRODUCTION_BASENAME }}" >> $GITHUB_ENV
       - uses: actions/checkout@v3
       - uses: pnpm/action-setup@v2.2.2
         with:
@@ -26,6 +27,6 @@ jobs:
       - name: Deploy app to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          personal_token: ${{ secrets.GITHUB_TOKEN }}
+          personal_token: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           publish_dir: ./build
           cname: eluyema.github.io/courses-webapp-react

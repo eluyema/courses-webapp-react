@@ -6,7 +6,7 @@ interface CourseLayoutProps {
 }
 
 const CourseLayout: FC<CourseLayoutProps> = () => {
-  return <div />
+  return <div />;
 };
 
 export default CourseLayout;
