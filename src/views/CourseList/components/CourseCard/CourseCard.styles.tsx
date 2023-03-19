@@ -60,9 +60,9 @@ const CardSkillsSection = styled("div")(({ theme }) => ({
 
 const CardLessonsSection = styled("div")({});
 
-const CourseLink =styled(Link)({
-  textDecoration: 'none'
-})
+const CourseLink = styled(Link)({
+  textDecoration: "none",
+});
 
 export {
   CourseCardWrapper,
@@ -75,5 +75,5 @@ export {
   CardRatingGrade,
   CardLessonsSection,
   CardSkillsSection,
-  CourseLink
+  CourseLink,
 };

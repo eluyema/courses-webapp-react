@@ -15,11 +15,11 @@ const SkeletonCard = () => {
     <SkeletonCardWrapper elevation={5}>
       <SkeletonImage animation="wave" variant="rectangular" />
       <SkeletonBody>
-        <SkeletonTitle animation="wave"  />
-        <SkeletonLessons animation="wave"  />
-        <SkeletonGrade animation="wave"  />
+        <SkeletonTitle animation="wave" />
+        <SkeletonLessons animation="wave" />
+        <SkeletonGrade animation="wave" />
         <SkeletonSkillRow animation="wave" />
-        <SkeletonSkillRow animation="wave"/>
+        <SkeletonSkillRow animation="wave" />
       </SkeletonBody>
     </SkeletonCardWrapper>
   );

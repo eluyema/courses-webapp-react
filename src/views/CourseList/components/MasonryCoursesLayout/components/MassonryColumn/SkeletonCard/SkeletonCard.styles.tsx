@@ -13,8 +13,8 @@ const SkeletonBody = styled("div")(({ theme }) => ({
 }));
 
 const SkeletonImage = styled(Skeleton)(({ theme }) => ({
-  height: '45%',
-  width: '100%',
+  height: "45%",
+  width: "100%",
   borderTopLeftRadius: theme.shape.borderRadius,
   borderTopRightRadius: theme.shape.borderRadius,
 }));
@@ -48,5 +48,5 @@ export {
   SkeletonLessons,
   SkeletonBody,
   SkeletonSkillRow,
-  SkeletonImage
+  SkeletonImage,
 };
